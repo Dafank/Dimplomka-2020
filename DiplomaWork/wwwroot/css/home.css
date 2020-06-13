@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+.letter-font {
+    font-family: 'Cinzel', serif;
+}
+
+.social a {
+    font-size: 4.5em;
+    padding: 3rem;
+}
+
+.fa-facebook {
+    color: #3b5998;
+}
+
+.fa-twitter {
+    color: #00aced;
+}
+
+.fa-instagram {
+    color: #517fa4;
+}
+
+    .fa-facebook:hover,
+    .fa-instagram:hover,
+    .fa-twitter:hover {
+        color: #d5d5d5;
+    }
+
+html, body {
+    height: 100%;
+    width: 100%;
+    color: #222;
+}
+
+body {
+    font-size: 1.1em;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Acme', sans-serif;
+}
+
+.carousel-caption h1 {
+    font-size: 500%;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 15px #000;
+}
+
+.carousel-caption h3 {
+    font-size: 200%;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px 10px #000;
+    padding-bottom: 1rem;
+}
+
+.btn-primary {
+    background-color: #6648b1;
+    border: 1px solid #563d7c;
+}
+
+.btn-primary:hover {
+    background-color: #563d7c;
+    border: 1px solid #563d7c;
+}
+
+.padding {
+    padding-bottom: 2rem;
+}
+
+.welcome {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.welcome hr {
+    border-top: 2px solid #b4b4b4;
+    width: 95%;
+    margin-top: .3rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 1000px) {
+    .carousel-inner {
+        height: 100%;
+    }
+
+    .carousel-item {
+        height: 100vh;
+    }
+}
+
+@media (min-max-wodth:768px) {
+
+    .carousel-caption {
+        top: 45%;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 350%;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 140%;
+        font-weight: 400;
+        padding-bottom: .2rem;
+    }
+    
+    .carousel-caption btn {
+        font-size: 95%;
+        padding: 8px 14px;
+    }
+}

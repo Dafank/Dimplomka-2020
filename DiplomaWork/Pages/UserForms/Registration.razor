@@ -1,0 +1,113 @@
+﻿@page "/registration"
+@layout EmptyLayout
+
+<link href="/css/autorize.css" rel="stylesheet"/>
+<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet"/>
+
+
+<div class="container-fluid">
+    <div class="row justify-content-center text-center align-items-center bg-light">
+        <div class="col-lg-6 col-xl-4 col-8 col-md-7 bg-white">
+            <h1 class="display-4 mb-4 mt-3">
+                Sign Up
+            </h1>
+            <EditForm class="text-lg-left text-md-center" Model="@_validation" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" novalidate>
+                <DataAnnotationsValidator />
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 mt-3">
+                        <label for="name">First Name</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="far fa-id-badge"></i></span>
+                            </div>
+                            <InputText type="text" class="form-control" @bind-Value="_validation.FirstName" id="name" placeholder="First Name" />
+                        </div>
+                        <ValidationMessage For="@(() => @_validation.FirstName)" />
+                    </div>
+                    <div class="col-lg-6 col-md-12 mt-3">
+                        <label for="surname">Last Name</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
+                            </div>
+                            <InputText type="text" class="form-control" @bind-Value="_validation.LastName" id="surname" placeholder="Last Name" />
+                        </div>
+                        <ValidationMessage For="@(() => @_validation.LastName)" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <label for="username">Username</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user-circle"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="username" placeholder="Username" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <label for="email">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-at"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="email" placeholder="Email" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" id="password" placeholder="********" />
+                        </div>
+                    </div>
+                </div>
+                <ValidationMessage For="@(() => @_validation.Password)" />
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <label for="c-password">Confirm Password</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" id="c-password" placeholder="********" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mx-auto">
+                    <div class="col-6 mt-3 mb-4 text-center">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Sign Up</button>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-12 mb-3">
+                        Have an account? <a href="#">Log In</a>
+                    </div>
+                </div>
+            </EditForm>
+                <form action="/" method="post" class="text-lg-left text-md-center">
+                    
+                </form>
+        </div>
+    </div>
+</div>
+
+@code {
+    UserModel _validation = new UserModel();
+
+    private void OnValidSubmit()
+    {
+        Console.WriteLine("Submit Valid");
+    }
+
+    private void OnInvalidSubmit()
+    {
+        Console.WriteLine("Submit Invalid");
+    }
+}
