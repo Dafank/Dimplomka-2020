@@ -1,0 +1,23 @@
+﻿@page "/plants/edit/{PlantId:int}"
+
+<h3>Edit </h3>
+
+@if (plant != null) 
+{
+    <PlantForm Plant="plant" OnValidSubmit="Edit"/>
+}
+
+@code {
+    [Parameter] public int PlantId { get; set; }
+    private Plant plant;
+
+    protected override void OnInitialized()
+    {
+        plant = new Plant() { Id = PlantId, Title = "My Plant" };
+    }
+
+    private void Edit()
+    {
+        Console.WriteLine("Editind the plant");
+    }
+}

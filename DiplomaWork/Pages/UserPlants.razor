@@ -1,0 +1,15 @@
+﻿@page "/plants"
+@inject  IRepository repository
+
+    <div>
+        <h3>Plants</h3>
+        <PlantsList Plants="plants"/>
+    </div>
+@code {
+    private List<Plant> plants;
+
+    protected async override Task OnInitializedAsync()
+    {
+        plants = repository.GetPlants();
+    }
+}

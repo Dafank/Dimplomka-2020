@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
+using DiplomaWork.Helpers;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DiplomaWork.Data;
+using Blazor.FileReader;
 
 namespace DiplomaWork
 {
@@ -28,6 +30,8 @@ namespace DiplomaWork
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddTransient<IRepository, Repository>();
+            services.AddFileReaderService(options => options.InitializeOnFirstCall = true);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

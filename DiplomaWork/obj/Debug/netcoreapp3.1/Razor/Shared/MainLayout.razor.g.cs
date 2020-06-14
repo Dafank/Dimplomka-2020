@@ -79,6 +79,20 @@ using DiplomaWork.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 11 "F:\Дипломака\Project\Diplom\DiplomaWork\_Imports.razor"
+using Diplom.Shared.Entities;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "F:\Дипломака\Project\Diplom\DiplomaWork\_Imports.razor"
+using DiplomaWork.Helpers;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998

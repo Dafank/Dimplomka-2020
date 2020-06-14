@@ -1,0 +1,8 @@
+﻿@page "/plant/{PlantID:int}"
+@page "/plant/{PlantID:int}/{PlantName}"
+
+<h3>DetailsPlant</h3>
+@code {
+    [Parameter] public int PlantId { get; set; }
+    [Parameter] public string PlantName { get; set; }
+}

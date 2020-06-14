@@ -79,6 +79,20 @@ using DiplomaWork.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 11 "F:\Дипломака\Project\Diplom\DiplomaWork\_Imports.razor"
+using Diplom.Shared.Entities;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "F:\Дипломака\Project\Diplom\DiplomaWork\_Imports.razor"
+using DiplomaWork.Helpers;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.LayoutAttribute(typeof(EmptyLayout))]
     [Microsoft.AspNetCore.Components.RouteAttribute("/login")]
     public partial class Login : Microsoft.AspNetCore.Components.ComponentBase

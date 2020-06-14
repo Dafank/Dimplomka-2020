@@ -1,0 +1,55 @@
+﻿
+    <EditForm Model="Plant" OnValidSubmit="OnValidSubmit">
+        <DataAnnotationsValidator />
+        <div class="form-group">
+            <label>Title:</label>
+            <div>
+                <InputText class="form-control" @bind-Value="@Plant.Title" />
+                <ValidationMessage For="@(() => Plant.Title)" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Watering date</label>
+            <div>
+                <InputDate class="form-control" @bind-Value="@Plant.WaterDate" />
+                <ValidationMessage For="@(() => Plant.WaterDate)" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Fertilization date</label>
+            <div>
+                <InputDate class="form-control" @bind-Value="@Plant.FertiliDate" />
+                <ValidationMessage For="@(() => Plant.FertiliDate)" />
+            </div>
+        </div>
+        <div class="form-group">
+            <InputImg Label="Picture" OnSelectedImage="PictureSelected" imageURL="@imageURL" />
+        </div>
+        <div>
+            <InputTextArea class="form-control" @bind-Value="@Plant.Note" />
+            <ValidationMessage For="@(() => Plant.Note)" />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Save Changes</button>
+    </EditForm>
+
+@code {
+    [Parameter] public Plant Plant { get; set; }
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    private string imageURL;
+
+    protected override void OnInitialized()
+    {
+        if (!string.IsNullOrEmpty(Plant.Picture))
+        {
+            imageURL = Plant.Picture;
+            Plant.Picture = null;
+        }
+    }
+
+    private void PictureSelected(string imageBase64)
+    {
+        Plant.Picture = imageBase64;
+        imageURL = null;
+    }
+}

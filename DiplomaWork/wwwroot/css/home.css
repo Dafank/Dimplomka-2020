@@ -94,7 +94,7 @@ body {
     }
 }
 
-@media (min-max-wodth:768px) {
+@media (min-max-width:768px) {
 
     .carousel-caption {
         top: 45%;

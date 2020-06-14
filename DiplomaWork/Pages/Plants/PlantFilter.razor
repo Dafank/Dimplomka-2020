@@ -1,0 +1,53 @@
+﻿@page "/plants/search"
+@inject IRepository Repository
+<h3>PlantSearch</h3>
+
+
+<div class="form-inline">
+    <div class="form-group" mb-2>
+        <label for="title" class="sc-only">Title</label>
+        <input type="text" class="form-control" id="title" placeholder="Plant Title"
+               @bind-value="title" @bind-value:event="oninput" />
+    </div>
+    <div class="form-group" mb-2>
+        <label for="wd" class="sc-only">Watering date</label>
+        <input type="date" class="form-control" id="wd" placeholder=""
+               @bind-value="waterdate" @bind-value:event="oninput" />
+    </div>
+    <div class="form-group" mb-2>
+        <label for="wd" class="sc-only">Fertilization date</label>
+        <input type="date" class="form-control" id="wd" placeholder=""
+               @bind-value="fertdate" @bind-value:event="oninput" />
+    </div>
+    <button type="button" class="btn btn-info mb-2 mx-sm-3" @onclick="SearchForPlants">Filter</button>
+    <button type="button" class="btn btn-danger mb-2" @onclick="Clear">Clear</button>
+</div>
+
+<PlantsList Plants="plants"></PlantsList>
+
+@code {
+    private List<Plant> plants;
+    string title = "";
+    DateTime? waterdate;
+    DateTime? fertdate;
+    protected override void OnInitialized()
+    {
+        plants = Repository.GetPlants();
+    }
+
+    private void SearchForPlants()
+    {
+        plants = plants.Where(x => x.Title.Contains(title)).ToList();
+        Console.WriteLine(title);
+        Console.WriteLine(waterdate);
+        Console.WriteLine(fertdate);
+    }
+
+    private void Clear()
+    {
+        plants = Repository.GetPlants();
+        title = "";
+        waterdate = null;
+        fertdate = null;
+    }
+}

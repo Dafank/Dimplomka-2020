@@ -1,0 +1,23 @@
+﻿<div>
+    <a href="@plantURL">
+        <img src="@Plant.Picture" alt="Poster" width="225" height="300" />
+    </a>
+    <a href="@plantURL">
+        <p>Title: <b>@Plant.Title</b></p>
+    </a>
+    <p>Watering date: <b>@Plant.WaterDate.ToString();</b></p>
+    <p>Fertizing date: <b>@Plant.WaterDate.ToString();</b></p>
+    <a class="btn btn-info">Edit </a>
+    <button class="btn btn-danger" @onclick="@(()=> DeletePlant.InvokeAsync(Plant))">Delete</button>
+</div>
+
+@code {
+    [Parameter] public Plant Plant { get; set; }
+    [Parameter] public EventCallback<Plant> DeletePlant { get; set; }
+    private string plantURL = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        plantURL = $"plant/{Plant.Id}/{Plant.Title.Replace(" ", "-")}";
+    }
+}

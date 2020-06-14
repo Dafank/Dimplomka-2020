@@ -1,0 +1,12 @@
+﻿@page "/plants/create"
+@inject NavigationManager NavigationManager;
+
+    <h3>CreatePlant</h3>
+    <PlantForm Plant="plant" OnValidSubmit="SavePlant"/> 
+@code {
+    private Plant plant = new Plant();
+    private void SavePlant()
+    {
+        //NavigationManager.NavigateTo("plant");
+    }
+}

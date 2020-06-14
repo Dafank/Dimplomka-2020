@@ -1,0 +1,8 @@
+F:\Дипломака\Project\Diplom\Diploma.Shared\bin\Debug\netstandard2.0\Diplom.Shared.deps.json
+F:\Дипломака\Project\Diplom\Diploma.Shared\bin\Debug\netstandard2.0\Diplom.Shared.dll
+F:\Дипломака\Project\Diplom\Diploma.Shared\bin\Debug\netstandard2.0\Diplom.Shared.pdb
+F:\Дипломака\Project\Diplom\Diploma.Shared\obj\Debug\netstandard2.0\Diplom.Shared.AssemblyInfoInputs.cache
+F:\Дипломака\Project\Diplom\Diploma.Shared\obj\Debug\netstandard2.0\Diplom.Shared.AssemblyInfo.cs
+F:\Дипломака\Project\Diplom\Diploma.Shared\obj\Debug\netstandard2.0\Diplom.Shared.dll
+F:\Дипломака\Project\Diplom\Diploma.Shared\obj\Debug\netstandard2.0\Diplom.Shared.pdb
+F:\Дипломака\Project\Diplom\Diploma.Shared\obj\Debug\netstandard2.0\Diplom.Shared.csproj.CoreCompileInputs.cache

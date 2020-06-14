@@ -8,13 +8,14 @@
 <div class="container-fluid">
     <div class="row justify-content-center text-center align-items-center bg-light">
         <div class="col-lg-6 col-xl-4 col-8 col-md-7 bg-white">
-            <h1 class="display-4 mb-4 mt-3">
+            <h1 class="display-4 mb-2 mt-1">
                 Sign Up
             </h1>
+
             <EditForm class="text-lg-left text-md-center" Model="@_validation" OnValidSubmit="OnValidSubmit" OnInvalidSubmit="OnInvalidSubmit" novalidate>
                 <DataAnnotationsValidator />
                 <div class="row">
-                    <div class="col-lg-6 col-md-12 mt-3">
+                    <div class="col-lg-6 col-md-12 mt-2">
                         <label for="name">First Name</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -24,7 +25,7 @@
                         </div>
                         <ValidationMessage For="@(() => @_validation.FirstName)" />
                     </div>
-                    <div class="col-lg-6 col-md-12 mt-3">
+                    <div class="col-lg-6 col-md-12 mt-2">
                         <label for="surname">Last Name</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -36,64 +37,64 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 mt-3">
+                    <div class="col-12 mt-2">
                         <label for="username">Username</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user-circle"></i></span>
                             </div>
-                            <input type="text" class="form-control" id="username" placeholder="Username" />
+                            <InputText type="text" class="form-control" @bind-Value="_validation.Username" id="username" placeholder="Username" />
                         </div>
+                        <ValidationMessage For="@(() => @_validation.Username)" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 mt-3">
+                    <div class="col-12 mt-2">
                         <label for="email">Email</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-at"></i></span>
                             </div>
-                            <input type="text" class="form-control" id="email" placeholder="Email" />
+                            <InputText type="text" class="form-control" @bind-Value="_validation.Email" id="email" placeholder="Email" />
                         </div>
+                        <ValidationMessage For="@(() => @_validation.Email)" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 mt-3">
+                    <div class="col-12 mt-2">
                         <label for="password">Password</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" id="password" placeholder="********" />
+                            <InputText type="password" class="form-control" @bind-Value="_validation.Password" id="password" placeholder="********" />
                         </div>
+                        <ValidationMessage For="@(() => @_validation.Password)" />
                     </div>
                 </div>
-                <ValidationMessage For="@(() => @_validation.Password)" />
                 <div class="row">
-                    <div class="col-12 mt-3">
+                    <div class="col-12 mt-2">
                         <label for="c-password">Confirm Password</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" id="c-password" placeholder="********" />
+                            <InputText type="password" class="form-control" @bind-Value="_validation.ConfirmPassword" id="c-passwor" placeholder="********" />
                         </div>
+                        <ValidationMessage For="@(() => @_validation.ConfirmPassword)" />
                     </div>
                 </div>
                 <div class="row justify-content-center mx-auto">
-                    <div class="col-6 mt-3 mb-4 text-center">
+                    <div class="col-6 mt-2 mb-3 text-center">
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Sign Up</button>
                     </div>
                 </div>
                 <div class="row text-center">
-                    <div class="col-12 mb-3">
-                        Have an account? <a href="#">Log In</a>
+                    <div class="col-12 mb-2">
+                        Have an account? <a href="login">Log In</a>
                     </div>
                 </div>
             </EditForm>
-                <form action="/" method="post" class="text-lg-left text-md-center">
-                    
-                </form>
         </div>
     </div>
 </div>

@@ -1,0 +1,32 @@
+﻿@inject IJSRuntime js
+
+@if (Plants == null)
+{
+    <text>Loading</text>
+}
+else if (Plants.Count == 0)
+{
+     <text>There are no records to show</text>  
+}
+else
+{
+    foreach (var plant in Plants)
+    {
+        <CurrentPlant Plant="plant" DeletePlant="DeletePlant"/>
+    }
+    
+}
+
+@code
+{
+    [Parameter] public List<Plant> Plants { get; set; }
+
+    private async Task DeletePlant(Plant plant)
+    {
+        var confirmed = await js.InvokeAsync<bool>("confirm", $"Are you sure you want to delete {plant.Title}");
+        if (confirmed == true)
+        {
+            Plants.Remove(plant);
+        }
+    }
+}
